@@ -1,0 +1,46 @@
+<div class="header">
+    <div class="username">
+        <span routerLink="">yaswanth-narayana</span>
+    </div>
+    <div class="actions">
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="action"><span>_hello</span></a>
+        <a routerLink="about-me" routerLinkActive="active" class="action"><span>_about_me</span></a>
+        <a routerLink="projects" routerLinkActive="active" class="action"><span>_projects</span></a>
+    </div>
+    <div class="space-between"></div>
+    <a routerLink="contact-me" routerLinkActive="active" class="contact-me">
+        <span>_contact_me</span>
+    </a>
+    <a href="javascript:void(0);" class="mobile-menu" (click)="toggleMenu()">
+        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6H20M4 12H20M4 18H20" stroke="#607B96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+
+<div class="menu-container" [class.active]="showMenu()">
+    <div class="backdrop" (click)="toggleMenu()"></div>
+    <div class="menu">
+        <div class="menu-links">
+            <div class="image" style="text-align: center; margin-bottom: 10px;">
+                <img src="/assets/images/among-us.webp" width="40%" style="margin-top: -20%;" alt="yaswanth narayana">
+            </div>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="link" (click)="showMenu.set(false)">
+                <i class="ph-bold ph-house"></i>
+                Home
+            </a>
+            <a routerLink="about-me" routerLinkActive="active" class="link" (click)="showMenu.set(false)">
+                <i class="ph-bold ph-article-medium"></i>                
+                About
+            </a>
+            <a routerLink="projects" routerLinkActive="active" class="link" (click)="showMenu.set(false)">
+                <i class="ph-bold ph-dev-to-logo"></i>                
+                Projects
+            </a>
+            <a routerLink="contact-me" routerLinkActive="active" class="link" (click)="showMenu.set(false)">
+                <i class="ph-bold ph-phone-call"></i>
+                Contact
+            </a>
+        </div>
+    </div>
+</div>

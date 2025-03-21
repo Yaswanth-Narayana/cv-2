@@ -1,0 +1,20 @@
+<div class="home-container">
+    <div class="section intro">
+        <span class="name-init">Hello, I am</span>
+        <span class="name">{{cvDetails().firstName}} <br> {{cvDetails().lastName}}</span>
+        <span class="designation">{{cvDetails().role}}</span>
+
+        <span class="comment">a web developer with {{age}}+ years of professional 
+            experience in angular, react, node, typescript, python and a student learning new technologies. </span>
+        <span class="resume">
+            <span [style.color]="'var(--type-color)'">const</span>
+            <span [style.color]="'var(--var-color)'"> resume </span>
+            <span [style.color]="'var(--white-color)'"> = </span>
+            <a [href]="RESUME" target="_blank"
+                [style.color]="'var(--value-color)'">"https://cloud.drive.com/resume"</a>
+        </span>
+    </div>
+    <div class="section image">
+        <img src="/assets/images/among-us.webp" width="80%" style="border-radius: 20px;" alt="yaswanth narayana pilla">
+    </div>
+</div>
