@@ -7,6 +7,9 @@ DIST_DIR="dist/cv-2"  # Update with your Angular project name inside dist
 TEMP_DIR="../temp-deploy"           # Temporary storage for dist files
 BRANCH_TO_DEPLOY="master"
 
+echo "installing node modules..."
+npm i
+
 echo "Building Angular project..."
 npm run build --prod
 
