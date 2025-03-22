@@ -1,6 +1,6 @@
 .main-layout {
-    height: 100vh;
-    height: 100dvh;
+    height: calc(100% - 20px);
+    height: calc(100dvh - 20px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
