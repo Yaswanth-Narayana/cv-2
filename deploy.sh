@@ -11,7 +11,7 @@ echo "installing node modules..."
 npm i
 
 echo "Building Angular project..."
-npm run build --prod
+ng build
 
 echo "Creating temporary folder..."
 rm -rf $TEMP_DIR && mkdir $TEMP_DIR && cp -r $DIST_DIR/cv-2/browser* $TEMP_DIR
@@ -26,8 +26,8 @@ git ls-files | grep -v '.gitignore' | xargs git rm -rf
 echo "Moving new dist files from temporary folder..."
 cp -r $TEMP_DIR/* .
 
-echo "Cleaning up temporary folder..."
-rm -rf $TEMP_DIR
+# echo "Cleaning up temporary folder..."
+# rm -rf $TEMP_DIR
 
 echo "Adding changes to $BRANCH_TO_DEPLOY branch..."
 git add .
