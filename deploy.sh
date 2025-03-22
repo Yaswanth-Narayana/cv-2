@@ -10,6 +10,8 @@ BRANCH_TO_DEPLOY="master"
 echo "installing node modules..."
 npm i
 
+git rm --cached package-lock.json
+
 echo "Building Angular project..."
 npm run build --prod
 
