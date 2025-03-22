@@ -10,8 +10,6 @@ BRANCH_TO_DEPLOY="master"
 echo "installing node modules..."
 npm i
 
-git rm --cached package-lock.json
-
 echo "Building Angular project..."
 npm run build --prod
 
@@ -23,6 +21,7 @@ echo "Copying dist files to temporary folder..."
 cp -r $DIST_DIR/* $TEMP_DIR
 
 echo "Switching to $BRANCH_TO_DEPLOY branch..."
+git stash --include-untracked
 git checkout $BRANCH_TO_DEPLOY
 
 echo "Deleting old files..."
@@ -43,6 +42,7 @@ git push origin $BRANCH_TO_DEPLOY
 
 echo "Switching back to main branch..."
 git checkout main
+git stash pop
 
 echo "Deployment successful! 🚀"
 
