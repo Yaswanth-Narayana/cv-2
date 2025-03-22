@@ -10,7 +10,7 @@ echo "installing node modules..."
 npm i
 
 echo "Building Angular project..."
-ng build
+ng build --configuration=production --base-href '/cv-2/'
 
 echo "Creating temporary folder..."
 rm -rf $TEMP_DIR && mkdir $TEMP_DIR && cp -r $DIST_DIR* $TEMP_DIR
