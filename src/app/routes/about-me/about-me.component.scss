@@ -198,7 +198,10 @@
     }
     
     .items {
+        font-size: 16px;
+
         .item {
+            margin-top: 1rem;
             padding: 8px 20px;
             cursor: pointer;
             white-space: nowrap;

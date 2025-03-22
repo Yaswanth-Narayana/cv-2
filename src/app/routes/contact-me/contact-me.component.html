@@ -1,3 +1,50 @@
 <div class="contact-wrapper">
-    
+    <div class="left-pannel">
+        <div class="section-list">
+            <div class="items">
+                <a class="item active">form</a>
+                <a class="item" href="tel:+917095673438" target="_blank">call</a>
+                <a class="item" href="mailto:yaswanthnarayana3438@gmail.com" target="_blank">email</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="contact-icon">
+            <i class="ph-fill ph-chat-teardrop-text"></i>
+        </div>
+        
+        <div class="contact-form" [formGroup]="contactForm">
+            <div class="input-wrapper">
+                <label for="_name">_name</label>
+                <input type="text" id="_name" name="_name" formControlName="name" />
+            </div>
+
+            <div class="input-wrapper">
+                <label for="_email">_email</label>
+                <input type="text" id="_email" name="_email" formControlName="email"/>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="_message">_message</label>
+                <textarea id="_message" name="_message" formControlName="message"></textarea>
+            </div>
+
+            <button>send_message</button>
+        </div>
+
+        <div class="form-preview">
+            <p>const button = document.getElementById('button')</p><br>
+            <p>const form = {{"{"}}</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;name : {{contactForm.get('name')?.value ?? ''}},</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;email : {{contactForm.get('email')?.value ?? ''}},</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;message : {{contactForm.get('message')?.value ?? ''}},</p>
+            <p>{{"}"}}</p><br><br>
+        
+            <p>button.addEventListener('click', () => {{'{'}}</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Thank you for your message ')</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;sendMessage(form))</p>
+            {{'}'}}
+        </div>
+    </div>
 </div>
