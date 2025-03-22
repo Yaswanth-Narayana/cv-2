@@ -2,7 +2,6 @@
 # Exit on error
 set -e 
 
-# Define variables
 DIST_DIR="dist/cv-2/browser/"  
 TEMP_DIR="../temp-deploy"
 BRANCH_TO_DEPLOY="master"
@@ -26,19 +25,19 @@ git ls-files | grep -v '.gitignore' | xargs git rm -rf
 echo "Moving new dist files from temporary folder..."
 cp -r $TEMP_DIR/* .
 
-# echo "Cleaning up temporary folder..."
-# rm -rf $TEMP_DIR
+echo "Cleaning up temporary folder..."
+rm -rf $TEMP_DIR
 
-# echo "Adding changes to $BRANCH_TO_DEPLOY branch..."
-# git add .
-# git commit -m "Deploy: $(date)"
+echo "Adding changes to $BRANCH_TO_DEPLOY branch..."
+git add .
+git commit -m "Deploy: $(date)"
 
-# echo "Pushing to $BRANCH_TO_DEPLOY branch..."
-# git push origin $BRANCH_TO_DEPLOY
+echo "Pushing to $BRANCH_TO_DEPLOY branch..."
+git push origin $BRANCH_TO_DEPLOY
 
-# echo "Switching back to main branch..."
-# git checkout main
-# git stash pop
+echo "Switching back to main branch..."
+git checkout main
+git stash pop
 
 echo "Deployment successful! 🚀"
 
