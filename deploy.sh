@@ -3,7 +3,7 @@
 set -e 
 
 # Define variables
-DIST_DIR="dist/cv-2"  # Update with your Angular project name inside dist
+DIST_DIR="dist"  # Update with your Angular project name inside dist
 TEMP_DIR="../temp-deploy"           # Temporary storage for dist files
 BRANCH_TO_DEPLOY="master"
 
@@ -14,7 +14,7 @@ echo "Building Angular project..."
 npm run build --prod
 
 echo "Creating temporary folder..."
-rm -rf $TEMP_DIR && mkdir $TEMP_DIR && cp -r $DIST_DIR/* $TEMP_DIR
+rm -rf $TEMP_DIR && mkdir $TEMP_DIR && cp -r $DIST_DIR/cv-2/browser* $TEMP_DIR
 
 echo "Switching to $BRANCH_TO_DEPLOY branch..."
 git stash --include-untracked
