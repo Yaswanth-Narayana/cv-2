@@ -99,7 +99,7 @@
     justify-content: flex-start;
 
     .tag {
-        font-size: 12px;
+        font-size: 14px;
         background: var(--highlight-color);
         padding: 0 15px;
         margin: 5px;
@@ -244,7 +244,7 @@ p {
             content: '';
             width: 10px;
             height: 10px;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background: linear-gradient(135deg, #ffedd5, #ffffff);
             background-size: 200% 200%;
             background-position: 25% 75%;
             border-radius: 50%;
@@ -315,10 +315,4 @@ p {
         padding: 0 10px;
         line-height: 1.5rem;
     }
-
-    .tags {
-        justify-content: space-evenly;
-    }
-
-
 }

@@ -4,15 +4,22 @@ export const EDUCATION = [
     {
         institution: "Vignan's Institute of Information Technology",
         degree: 'Bachelor of Technology',
-        specification : 'Computer Science'
+        specification : 'Computer Science',
+        grade : '8.6',
+        completionYear : '2024'
     }, {
         institution: "Sri Gayathri Jr College",
         degree: 'Intermediate',
-        specification : 'MPC'
+        specification : 'MPC',
+        grade : '9.3',
+        completionYear : '2020'
+
     }, {
         institution: "Chalapathi Public School",
         degree: 'Matriculation',
-        specification : ''
+        specification : '',
+        grade : '9.7',
+        completionYear : '2018'
     }
 ]
 
@@ -22,20 +29,35 @@ export const EXPERIENCE = [
         position : 'Product Developer',
         startDate : new Date('05/02/2024'),
         description : 'Worked on various projects related to web development, mobile applications, and backend services.',
-        projects : ['InnCircles CRM', 'InnCircles Connect', 'InnCircles Homes']
+        projects : [{
+            name : 'InnCircles CRM',
+            key : 'inn-crm'
+        },{
+            name : 'InnCircles Connect',
+            key : 'inn-connect'
+        }, {
+            name : 'InnCircles Homes',
+            key : 'inn-homes'
+        }]
     }, {
         company : 'InnCircles Pvt Ltd',
         position : 'Product Developer Intern',
         startDate : new Date('08/21/2023'),
         endDate : new Date('05/01/2024'),
         description : 'Worked on various projects related to web development, backend services.',
-        projects : ['InnCircles CRM']
+        projects : [{
+            name : 'InnCircles CRM',
+            key : 'inn-crm'
+        }]
     }, {
         company : 'MetaComic Pvt Ltd',
         position : 'Full Stack Developer Intern',
         startDate : new Date('05/01/2023'),
         endDate : new Date('07/21/2023'),
         description : 'Worked on projects related to web development.',
-        projects : ['RestoBarB']
+        projects : [{
+            name : 'RestoBar-B',
+            key : 'meta-resto'
+        }]
     }
 ]

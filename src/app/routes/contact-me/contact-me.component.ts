@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -12,6 +12,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, FormControl, Validators } 
 })
 export class ContactMeComponent {
 	contactForm !: FormGroup
+	submitting = signal<boolean>(false)
 
 	constructor(private fb : FormBuilder) {
 		this.contactForm = fb.group({
@@ -23,8 +24,26 @@ export class ContactMeComponent {
 
 
 	sendMessage() {
-		if(this.contactForm.valid) {
-
+		if(this.contactForm.valid && !this.submitting()) {
+			this.submitting.set(true)
+			fetch('https://api.emailjs.com/api/v1.0/email/send',
+				{
+					method : 'POST',
+                    headers : {
+                        'Content-Type': 'application/json'
+                    },
+                    body : JSON.stringify({
+                        service_id: 'e35ul38',
+                        template_id: '8e9u22l',
+                        user_id: 'sePIhO0gdfWmiof1O',
+                        template_params: this.contactForm.value
+                    })
+				}
+			).then((res) => {
+				console.log(res);
+			}).catch((e) => {
+				console.error(e);
+			}).finally(() => this.submitting.set(false));
 		} else {
 
 		}

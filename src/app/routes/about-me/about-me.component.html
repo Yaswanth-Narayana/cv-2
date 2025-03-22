@@ -44,7 +44,7 @@
                 @for(education of EDUCATION; track $index) {
                     <p>
                         - Graduated with {{education.degree}} in {{education.specification}} from {{education.institution}} in
-                        2018, achieving an CGPA of 8.28
+                        {{education.completionYear}}, achieving an CGPA of {{education.grade}}
                     </p>
                 }
             </div>
@@ -64,7 +64,7 @@
                                 <div class="products">
                                     <span class="head">Products: </span>
                                     @for(product of exp.projects; track $index) {
-                                        <span class="product" (click)="goTo(product)">{{product}}</span>
+                                        <span class="product" (click)="goTo(product.key)">{{product.name}}</span>
                                     }
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                     </div>
 
                     <div>
-                        <p>
+                        <p style="line-height: 2rem;">
                             {{project.description}}
                         </p>
                     </div>

@@ -21,6 +21,18 @@ body {
     height: calc(100vh - 20px);
 }
 
+canvas {
+    z-index: -1;
+    width: calc(100% - 20px);
+    margin: 0;
+    padding: 10px;
+    height: calc(100vh - 20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 * {
     font-family: "Ubuntu Mono", monospace;
 }

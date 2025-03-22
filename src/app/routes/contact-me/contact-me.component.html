@@ -30,7 +30,7 @@
                 <textarea id="_message" name="_message" formControlName="message"></textarea>
             </div>
 
-            <button>send_message</button>
+            <button (click)="sendMessage()" [disabled]="submitting()">send_message</button>
         </div>
 
         <div class="form-preview">
