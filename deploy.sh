@@ -25,7 +25,7 @@ git stash --include-untracked
 git checkout $BRANCH_TO_DEPLOY
 
 echo "Deleting old files..."
-git rm -rf .
+git rm -rf . && git checkout -- .gitignore
 
 echo "Moving new dist files from temporary folder..."
 cp -r $TEMP_DIR/* .
