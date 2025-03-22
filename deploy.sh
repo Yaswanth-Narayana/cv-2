@@ -16,17 +16,15 @@ ng build
 echo "Creating temporary folder..."
 rm -rf $TEMP_DIR && mkdir $TEMP_DIR && cp -r $DIST_DIR* $TEMP_DIR
 
-echo ""
+echo "Switching to $BRANCH_TO_DEPLOY branch..."
+git stash --include-untracked
+git checkout $BRANCH_TO_DEPLOY
 
-# echo "Switching to $BRANCH_TO_DEPLOY branch..."
-# git stash --include-untracked
-# git checkout $BRANCH_TO_DEPLOY
+echo "Deleting all files except .gitignore..."
+git ls-files | grep -v '.gitignore' | xargs git rm -rf
 
-# echo "Deleting all files except .gitignore..."
-# git ls-files | grep -v '.gitignore' | xargs git rm -rf
-
-# echo "Moving new dist files from temporary folder..."
-# cp -r $TEMP_DIR/* .
+echo "Moving new dist files from temporary folder..."
+cp -r $TEMP_DIR/* .
 
 # echo "Cleaning up temporary folder..."
 # rm -rf $TEMP_DIR
