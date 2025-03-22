@@ -24,8 +24,8 @@ echo "Switching to $BRANCH_TO_DEPLOY branch..."
 git stash --include-untracked
 git checkout $BRANCH_TO_DEPLOY
 
-echo "Deleting old files..."
-git rm -rf . && git checkout -- .gitignore
+echo "Deleting all files except .gitignore..."
+git ls-files | grep -v '.gitignore' | xargs git rm -rf
 
 echo "Moving new dist files from temporary folder..."
 cp -r $TEMP_DIR/* .
