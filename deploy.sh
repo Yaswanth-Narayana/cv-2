@@ -14,11 +14,7 @@ echo "Building Angular project..."
 npm run build --prod
 
 echo "Creating temporary folder..."
-rm -rf $TEMP_DIR
-mkdir $TEMP_DIR
-
-echo "Copying dist files to temporary folder..."
-cp -r $DIST_DIR/* $TEMP_DIR
+rm -rf $TEMP_DIR && mkdir $TEMP_DIR && cp -r $DIST_DIR/* $TEMP_DIR
 
 echo "Switching to $BRANCH_TO_DEPLOY branch..."
 git stash --include-untracked
