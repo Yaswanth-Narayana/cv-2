@@ -1,16 +1,9 @@
-# Ignore everything by default
-*
 
-# Allow only the necessary files
-!.gitignore
-!index.html
-!assets/
-!styles.css
-!main.js
 
 # Ensure node_modules and Angular-related files are ignored
 node_modules/
 .angular/
 package.json
 package-lock.json
+dist/cv-2
 src/
