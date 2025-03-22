@@ -31,7 +31,7 @@
             window.addEventListener("resize", resizeCanvas);
 
             const stars = [];
-            const numStars = 150;
+            const numStars = 120;
 
             for (let i = 0; i < numStars; i++) {
                 stars.push({
@@ -65,10 +65,10 @@
             }
 
             function drawGradientBackground() {
-                    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-                    gradient.addColorStop(0, "#1a0026"); // Deep midnight purple
-                    gradient.addColorStop(0.5, "#0d001a"); // Dark purple
-                    gradient.addColorStop(1, "#000011"); // Almost black
+                const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, "#00112b"); // Deep navy blue
+                gradient.addColorStop(0.5, "#00081a"); // Dark midnight blue
+                gradient.addColorStop(1, "#000011"); // Almost black
 
                     ctx.fillStyle = gradient;
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -122,7 +122,7 @@
                 t += moonSpeed;
                 if (t > 100) t = -50;
 
-                ctx.fillStyle = "white";
+                ctx.fillStyle = "grey";
                 for (const star of stars) {
                     ctx.beginPath();
                     ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
@@ -143,5 +143,5 @@
 
     </script>
     <app-root></app-root>
-<link rel="modulepreload" href="chunk-QDF25JLF.js"><link rel="modulepreload" href="chunk-2GFSHRWA.js"><link rel="modulepreload" href="chunk-LMRLHKNS.js"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-B6D2USZS.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-QDF25JLF.js"><link rel="modulepreload" href="chunk-2GFSHRWA.js"><link rel="modulepreload" href="chunk-LMRLHKNS.js"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-7KDBDVFU.js" type="module"></script></body>
 </html>
